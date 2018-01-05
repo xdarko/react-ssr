@@ -11,12 +11,13 @@ import routes from '../client/routes';
  * Renders react app markup and returns it as a string
  * @param  {String} location - The URL the server received, needed to render proper route's markup
  * @param  {Object} store    - redux store
- * @return {String}           - server rendered markup for specified location
+ * @param  {Object} context  - react context
+ * @return {String}          - server rendered markup for specified location
  */
-export default (location, store) => {
+export default (location, store, context) => {
   const content = renderToString(
     <Provider store={store}>
-      <StaticRouter location={location} context={{}}>
+      <StaticRouter location={location} context={context}>
         <div>{renderRoutes(routes)}</div>
       </StaticRouter>
     </Provider>

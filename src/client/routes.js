@@ -1,6 +1,8 @@
 import App from './App';
 import HomePage from './pages/HomePage';
-import UsersListPage, { loadData } from './pages/UsersListPage';
+import UsersListPage from './pages/UsersListPage';
+import AdminsListPage from './pages/AdminsListPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 export default [{
   ...App,
@@ -13,6 +15,14 @@ export default [{
     {
       path: '/users',
       ...UsersListPage
+    },
+    {
+      path: '/admins',
+      ...AdminsListPage
+    },
+    {
+      path: '',
+      ...NotFoundPage
     }
   ]
 }];
